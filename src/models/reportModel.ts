@@ -1,6 +1,6 @@
-import mongoose, { Schema, model } from "mongoose";
+import { Schema, model } from "mongoose";
 
-const dangerSchema = new Schema({
+const reportSchema = new Schema({
     name:{
         type: String,
         required: [true, "Type is required"]
@@ -12,14 +12,14 @@ const dangerSchema = new Schema({
         type: String,
         required: [true, "Severity is required"]
     },
-    coordinates:[{
-        type: String,
+    coordinates:{
+        type: [String],
         required: [true, "Coordinates are required"]
-    }],
+    },
     description:{
         type: String,
         required: [true, "Description is required"]
     }
 })
 
-export const DangerModel = model("Danger", dangerSchema);
+export const ReportModel = model("Report", reportSchema);

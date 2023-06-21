@@ -4,8 +4,9 @@ import rateLimit from 'express-rate-limit'
 import helmet from "helmet"
 import bodyParser from "body-parser"
 import mongoSanitize from "express-mongo-sanitize"
-import dangerRouter from "./routes/dangerRouter"
+import reportRouter from "./routes/reportRouter"
 import zoneRouter from "./routes/zoneRouter"
+import deviceRouter from "./routes/deviceRouter"
 
 dotenv.config({})
 
@@ -24,7 +25,8 @@ app.use(helmet());
 app.use(bodyParser.json());
 app.use(mongoSanitize());
 
-app.use("/api/danger", dangerRouter)
-app.use("/api/zone", zoneRouter)
+app.use("/api/report", reportRouter);
+app.use("/api/zone", zoneRouter);
+app.use("/api/device", deviceRouter);
 
 export default app;
