@@ -10,8 +10,12 @@ const deviceSchema = new Schema({
         required: [true, "Description is required"]
     },
     coordinates:{
-        type: [String],
+        type: [Number],
         required: [true, "Coordinates are required"]
+    },
+    type:{
+        type: String,
+        required: [true, "Type is required"]
     }
 })
 

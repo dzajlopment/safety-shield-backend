@@ -2,7 +2,7 @@ import { Schema, model } from "mongoose";
 
 const zoneSchema = new Schema({
     coordinates: {
-        type: [String],
+        type: [Number],
         required: [true, "Coordinates are required"]
     },
     signs: {

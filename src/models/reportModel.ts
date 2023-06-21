@@ -13,7 +13,7 @@ const reportSchema = new Schema({
         required: [true, "Severity is required"]
     },
     coordinates:{
-        type: [String],
+        type: [Number],
         required: [true, "Coordinates are required"]
     },
     description:{
