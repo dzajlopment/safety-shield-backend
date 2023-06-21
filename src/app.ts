@@ -7,6 +7,7 @@ import mongoSanitize from "express-mongo-sanitize"
 import reportRouter from "./routes/reportRouter"
 import zoneRouter from "./routes/zoneRouter"
 import deviceRouter from "./routes/deviceRouter"
+import cors from "cors"
 
 dotenv.config({})
 
@@ -19,6 +20,10 @@ const limiter = rateLimit({
 	legacyHeaders: false,
     message: "Too many requests from this IP. Try again in a moment."
 })
+
+app.use(cors());
+
+app.options('*', cors());
 
 app.use("/api" ,limiter);
 app.use(helmet());

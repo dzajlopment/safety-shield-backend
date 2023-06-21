@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import express from "express";
 import app from "./app"
 import dotenv from "dotenv"
 
