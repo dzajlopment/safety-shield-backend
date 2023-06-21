@@ -16,6 +16,10 @@ const deviceSchema = new Schema({
     type:{
         type: String,
         required: [true, "Type is required"]
+    },
+    zone:{
+        type: String,
+        required: [true, "Zone is required"]
     }
 })
 
