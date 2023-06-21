@@ -7,6 +7,7 @@ const reportSchema = new Schema({
     },
     device:{
         type: String,
+        required: [true, "Device is required"]
     },
     severity:{
         type: String,
