@@ -3,6 +3,7 @@ import express from "express";
 import app from "./app"
 import dotenv from "dotenv"
 
+
 dotenv.config({})
 
 function handleDbError(){
@@ -18,4 +19,12 @@ if(!db){
 
 mongoose.connect(db).then(() =>{
     console.log("Connected")
+}).catch((error =>{
+    console.error(error);
+}));
+
+const port = process.env.PORT!;
+
+const server = app.listen(port, ()=>{
+    console.log(`App running on port ${port}`);
 });
